@@ -31,5 +31,9 @@ public class Main {
         myClass2.function10();
     }
 
-    static void part3(){}
+    private static void part3(){
+        MyClass3 myClass3 = new MyClass3();
+//        myClass3.function1a();
+//        myClass3.function1b();
+    }
 }
