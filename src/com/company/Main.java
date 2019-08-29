@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 //        part1();
 //        part2();
-        part3();
+//        part3();
     }
 
     private static void part1(){
@@ -33,7 +33,9 @@ public class Main {
 
     private static void part3(){
         MyClass3 myClass3 = new MyClass3();
-//        myClass3.function1a();
-//        myClass3.function1b();
+        myClass3.function1a();
+        myClass3.function1b();
+        myClass3.function1c();
+        myClass3.function2();
     }
 }
