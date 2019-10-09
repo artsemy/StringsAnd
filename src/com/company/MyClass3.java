@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 
 class MyClass3 {
 
+    //sort paragraphs by number of sentences
     void function1a(){
         String fileName = "./resources/text";
         String str = readFile(fileName);
@@ -20,8 +21,8 @@ class MyClass3 {
         Arrays.sort(mass, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                int l1 = o1.split("[\\.\\?\\!]\\s+").length;
-                int l2 = o2.split("[\\.\\?\\!]\\s+").length;
+                int l1 = o1.split("[.?!]\\s+").length;
+                int l2 = o2.split("[.?!]\\s+").length;
                 return Integer.compare(l1, l2);
             }
         });
@@ -31,6 +32,7 @@ class MyClass3 {
         }
     }
 
+    //read text from file
     private String readFile(String name){
         String res = "";
         Path path = Paths.get(name);
@@ -46,11 +48,12 @@ class MyClass3 {
         return res;
     }
 
+    //sort words in sentences by length
     void function1b(){
         String fileName = "./resources/text";
         String str = readFile(fileName);
         System.out.println(str);
-        Pattern pattern = Pattern.compile("\\S+[\\.\\?\\!]");
+        Pattern pattern = Pattern.compile("\\S+[.?!]");
         Matcher matcher = pattern.matcher(str);
         int start = 0;
         while (matcher.find()){
@@ -64,6 +67,7 @@ class MyClass3 {
         System.out.println(str);
     }
 
+    //sort words in sentence
     private String sortSent(String str){
         String res = "";
         String[] mass = str.split("\\s+");
@@ -82,12 +86,13 @@ class MyClass3 {
         return res;
     }
 
+    //sort word by number of chosen symbol, with same number sort by alphabet
     void function1c(){
         char c = 'e';
         String fileName = "./resources/text";
         String str = readFile(fileName);
         System.out.println(str);
-        Pattern pattern = Pattern.compile("\\S+[\\.\\?\\!]");
+        Pattern pattern = Pattern.compile("\\S+[.?!]");
         Matcher matcher = pattern.matcher(str);
         int start = 0;
         while (matcher.find()){
@@ -101,6 +106,7 @@ class MyClass3 {
         System.out.println(str);
     }
 
+    //sorting sentence
     private String sortSent2(String str, char c){
         String res = "";
         String[] mass = str.split("\\s+");
@@ -123,6 +129,7 @@ class MyClass3 {
         return res;
     }
 
+    //count letter
     private int countLetter(String str, char c){
         int k = 0;
         char[] mass = str.toCharArray();
@@ -134,12 +141,11 @@ class MyClass3 {
         return k;
     }
 
+    //parse xml: open tag, close tag, tag content
     void function2(){
         String fileName = "./resources/text2.xml";
         String str = readFile(fileName);
-//        System.out.println(str);
         str = normalize(str);
-//        System.out.println(str);
         Pattern pattern = Pattern.compile("<[^<>/]+>");
         Matcher matcher = pattern.matcher(str);
         while (matcher.find()){
@@ -153,6 +159,7 @@ class MyClass3 {
         }
     }
 
+    //find and replace empty tag
     private String normalize(String str){
         Pattern pattern = Pattern.compile("<[^<>]+/>");
         Matcher matcher = pattern.matcher(str);
@@ -164,6 +171,7 @@ class MyClass3 {
         return str;
     }
 
+    //create string to replace
     private String stringToReplace(String str){
         String res, s1;
         s1 = str.substring(1, str.length()-2);
@@ -171,10 +179,12 @@ class MyClass3 {
         return res;
     }
 
+    //tag name
     private String getTagName(String str){
         String res;
         res = str.substring(1, str.length()-1);
         res = res.split(" ")[0];
         return res;
     }
+
 }

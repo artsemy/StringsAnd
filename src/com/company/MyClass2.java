@@ -2,6 +2,7 @@ package com.company;
 
 class MyClass2 {
 
+    //find the longest sequence of spaces
     void function1(){
         String str = "a df  dfef   dsfdf fsdf  sfd f";
         String str2 = " ";
@@ -16,6 +17,7 @@ class MyClass2 {
         System.out.println("the biggest sequence " + k);
     }
 
+    //add symbol 'b' after all symbols 'a'
     void function2(){
         String str = "asabtrareatfdaafa";
         System.out.println("was " + str);
@@ -23,6 +25,7 @@ class MyClass2 {
         System.out.println("now " + str);
     }
 
+    //check if the word palindrome
     void function3(){
         String str = "absba";
         String str2 = new StringBuffer(str).reverse().toString();
@@ -33,6 +36,7 @@ class MyClass2 {
         }
     }
 
+    //coping and concat, create a word from another
     void function4(){
         String str = "информатика";
         String str2 = "";
@@ -42,6 +46,7 @@ class MyClass2 {
         System.out.println(str2);
     }
 
+    //count symbol 'a'
     void function5(){
         String str = "asabtrareatfdaafa";
         System.out.print(str);
@@ -50,9 +55,10 @@ class MyClass2 {
             count++;
             str = str.replaceFirst("a", "b");
         }
-        System.out.println(" contains a " + count + " times");
+        System.out.println(" contains 'a' " + count + " times");
     }
 
+    //make new string with duplicating each symbol
     void function6(){
         String str = "arty";
         String str2 = "";
@@ -64,18 +70,20 @@ class MyClass2 {
         System.out.println(str2);
     }
 
+    //delete all spaces and duplicated symbols of string
     void function7(){
         String str = "aa bc dgbas ewq  ioppoik";
-        System.out.println("was " + str);
+        System.out.println("was: " + str);
         String str2 = "";
         str = str.replaceAll(" ", "");
         while (str.length() > 0){
             str2 = str2.concat(str.substring(0,1));
             str = str.replaceAll(str.substring(0,1), "");
         }
-        System.out.println("now " + str2);
+        System.out.println("now: " + str2);
     }
 
+    //find the longest word
     void function8(){
         String str = "1 22 333 4444 22 55555 333";
         System.out.println(str);
@@ -91,8 +99,10 @@ class MyClass2 {
         System.out.println("the longest is " + str);
     }
 
+    //count english upper and lower case letters
     void function9(){
         String str = "en_aaaABCDe_ru_ЯЯЯАААааа";
+        System.out.println(str);
         int countLower = 0;
         int countUpper = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -106,8 +116,10 @@ class MyClass2 {
         System.out.println("Upper " + countUpper + " Lower " + countLower);
     }
 
+    //count sentences ended with '!' '?' '.'
     void function10(){
         String str = "aaa?bbb?cc?d.f.r.t!yy!u!" ;
+        System.out.println(str);
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
@@ -117,4 +129,5 @@ class MyClass2 {
         }
         System.out.println(count);
     }
+
 }

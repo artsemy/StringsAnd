@@ -2,6 +2,7 @@ package com.company;
 
 class MyClass1 {
 
+    //convert from 'camelCase' to 'snake_case'
     void function1(){
         char[][] mass = {{'i', 'n', 't', 'I', 'n', 't'}, {'c', 'h', 'a', 'r', 'C', 'h', 'S', 'h'}};
         char[] mass2;
@@ -12,6 +13,7 @@ class MyClass1 {
         }
     }
 
+    //convert to 'snake_case'
     private char[] toSnakeCase(char[] ch){
         char[] res;
         int count = countUpper(ch);
@@ -29,6 +31,7 @@ class MyClass1 {
         return res;
     }
 
+    //count added array size
     private int countUpper(char[] ch){
         int res = 0;
         for (char c: ch) {
@@ -39,6 +42,7 @@ class MyClass1 {
         return res;
     }
 
+    //print array
     private void printChars(char[] chars){
         for (char c: chars) {
             System.out.print(c);
@@ -46,6 +50,7 @@ class MyClass1 {
         System.out.println();
     }
 
+    //replace 'word' with 'letter'
     void function2(){
         char[] mass = {'A', 'w', 'o', 'r', 'd', 'A', 'n', 'd', 'w', 'o', 'r', 'L', 'w', 'o', 'r', 'd'};
         printChars(mass);
@@ -53,6 +58,7 @@ class MyClass1 {
         printChars(res);
     }
 
+    //new array with 'letter'
     private char[] replaceWord(char[] chars){
         int count = countReplaces(chars);
         char[] res = new char[chars.length + count*2];
@@ -73,6 +79,7 @@ class MyClass1 {
         return res;
     }
 
+    //count replaces for array size
     private int countReplaces(char[] chars){
         int res = 0;
         for (int i = 0; i < chars.length-3; i++) {
@@ -83,6 +90,7 @@ class MyClass1 {
         return res;
     }
 
+    //count digits in array
     void function3(){
         char[] chars = {'1', 's', '2', '4', 'a', 'o', 'p', '7'};
         printChars(chars);
@@ -95,6 +103,7 @@ class MyClass1 {
         System.out.println("number of digits " + count);
     }
 
+    //count numbers in array
     void function4(){
         char[] chars = {'1', 's', '2', '4', 'a', 'o', 'p', '7'};
         printChars(chars);
@@ -110,6 +119,7 @@ class MyClass1 {
         System.out.println("number of numbers " + count);
     }
 
+    //delete useless spaces
     void function5(){
         char[] chars = {' ', ' ', 's', '2', ' ' , '4', ' ', ' ', ' ', 'a', ' ', ' ', 'o', ' ', 'p', ' '};
         printChars(chars);
@@ -118,6 +128,7 @@ class MyClass1 {
         printChars(res);
     }
 
+    //clean spaces in center
     private char[] cleanRedundant(char[] chars){
         int count = countSpaces(chars);
         char[] res = new char[chars.length-count];
@@ -133,6 +144,7 @@ class MyClass1 {
         return res;
     }
 
+    //count spaces in line
     private int countSpaces(char[] chars){
         int count = 0;
         for (int i = 0; i < chars.length-1; i++) {
@@ -143,6 +155,7 @@ class MyClass1 {
         return count;
     }
 
+    //clean spaces at the beginning and the end
     private char[] cleanBorder(char[] chars){
         char[] res;
         if (chars[0] != ' ' && chars[chars.length-1] != ' '){
@@ -165,4 +178,5 @@ class MyClass1 {
         }
         return res;
     }
+
 }
